@@ -1,0 +1,20 @@
+1.数据库帐号，密码和端口号的更改
+  在./Django/Movie/Movie/settings.py DATABASES更改
+  NAME：数据库的名字（建议用默认）
+  USER：数据库管理系统帐号（要改）
+  PASSWORD：数据库管理系统密码（要改）
+  POST：端口号
+
+2.Djangp/Movie/recommand/views 
+函数Showdata连接数据库和执行数据库语句那里要改成对应的数据库/表的名字，密码
+函数Suggest,Insert,search,select同理
+
+3.启动django之前需要进行数据迁移
+
+4.http://127.0.0.1:8000/Page/enter 登录界面
+    http://127.0.0.1:8000/Page/sign 注册界面
+    http://127.0.0.1:8000/Page/recommand 主界面
+
+5.不要通过其他端口号进行启动django，最好用8000端口，如果需要换端口需要对recommand.js和login.html,register.html进行对应的修改
+
+6.data文件夹下是电影数据导入数据库的exe文件和源码

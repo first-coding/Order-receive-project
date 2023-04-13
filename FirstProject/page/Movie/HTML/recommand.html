@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+  <title>电影推荐系统</title>
+  <link rel="stylesheet" type="text/css" href="{% static "./recommand.css" %}" />
+</head>
+
+<body>
+  <div id="header">
+    <a class="exit" href="http://127.0.0.1:8000/Page/enter">退出登录</a>
+    <h1>电影推荐系统</h1>
+    <div>
+      <input type="text" id="search-input" placeholder="搜索电影">
+      <button>全部</button>
+      <button>动作</button>
+      <button>喜剧</button>
+      <button>爱情</button>
+    </div>
+  </div>
+  <div id="content">
+    <div id="left">
+      <table id="tables">
+        <tbody id="tbody">
+        <tr id="first">
+        </tr>
+        <tr id="second">
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="right">
+      <h2>推荐电影</h2>
+      <ul id="recommendations">
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="{% static "./jquery-3.6.0.min.js" %} "></script>
+<script src="{% static "./axios.js" %}"></script>
+<script src="{% static "./recommand.js" %}"></script>

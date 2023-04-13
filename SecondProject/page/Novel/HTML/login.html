@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% load static %}
+	<meta charset="utf-8">
+	<title>登录</title>
+	<link rel="stylesheet" type="text/css" href="{% static "./login.css" %}" />
+	<script src="{% static "./axios.js" %}"></script>
+</head>
+
+<body>
+	<div id='login_body'>
+		<div id='login_one'>
+			<!-- 最左边 -->
+			<div id='left'>
+				<div id='middle'>
+					<p>感谢您对我们小说推荐网站的关注。我们致力于为广大读者提供全球范围内最优秀的小说作品，并让您能够轻松、便捷地找到自己喜欢的读物。我们的小说推荐涵盖了各种类型，包括惊险刺激、悬疑推理、历史传记、科幻奇幻、言情小说等等，无论您喜欢哪种类型，我们都能满足您的需求。
+					</p>
+				</div>
+			</div>
+			<!-- 右边登录的框 -->
+			<div id="right">
+				<div id='img'>
+					<img src="http://127.0.0.1:8000/Novel/二维码.png">
+
+				</div>
+				<img src="http://127.0.0.1:8000/Novel/applogo.png" id='right-one'>
+
+				<p id="login-first">登录</p>
+				<div id="login-form-text">
+					<form action="http://127.0.0.1:8000/" method="post" id="first">
+						<input type="text" name="user" onFocus="if(value==defaultValue){value='';}"
+							onBlur="if(!value){value=defaultValue;}" value="请输入用户名或邮箱账号" id="login-form-item1" />
+						<input type="text" name="pwd" onFocus="if(value==defaultValue){value='';}"
+							onBlur="if(!value){value=defaultValue;}" value="请输入密码" id="login-form-item2" />
+					</form>
+					<div id='login-two'>
+						<div id='login-three'>
+							<a href="{% url 'sign' %}">创建账号</a>
+						</div>
+						<button class="login-btn" onclick="submitForm()">登录</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script>
+	var f1 = document.getElementById('login-form-item2')
+	f1.addEventListener('click', function () {
+		f1.type = 'password'
+	})
+	function submitForm() {
+		let form = document.getElementById('first');
+		console.log(form)
+		axios.post('/Manage/login', new FormData(form))
+		.then(function(response) {
+		console.log(response);
+		if(response.data=="登录成功"){
+			let cookies = document.cookie
+			lend_data = cookies.split("=")[2]
+			axios.post("http://127.0.0.1:8000/recommand/Get_cookie",{
+				'cookies':lend_data,
+			}).then(response=>{
+				if(response.data=="ok"){
+					window.location.href="{% url 'recommand' %}"
+				}
+			})
+		}
+		})
+		.catch(function(error) {
+		console.error(error);
+		window.location.href="{% url 'enter' %}"
+		});
+	}
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+      /* 上半部分布局 */
+      #header {
+        height: 30%;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 下半部分布局 */
+      #content {
+        height: 70%;
+        width: 100%;
+        display: flex;
+      }
+
+      #left {
+        flex: 7;
+        padding: 10px;
+      }
+
+      #right {
+        flex: 3;
+        padding: 10px;
+      }
+
+      /* 表格样式 */
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      /* 推荐电影列表样式 */
+      #recommendations {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #recommendations li {
+        margin-bottom: 5px;
+        background-color: #f9f9f9;
+        padding: 10px;
+        text-align: center;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      #recommendations li:hover {
+        background-color: #f1f1f1;
+      }

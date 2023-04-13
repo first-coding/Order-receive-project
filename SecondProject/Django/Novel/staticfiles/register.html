@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>注册	</title>
+	<link type="text/css" rel="stylesheet" href="../CSS/login.css" />
+</head>
+
+<body>
+	<div id='login_body'>
+		<div id='login_one'>
+			<div id='left'>
+				<div id='middle'>
+					<p>感谢您对我们小说推荐网站的关注。我们致力于为广大读者提供全球范围内最优秀的小说作品，并让您能够轻松、便捷地找到自己喜欢的读物。我们的小说推荐涵盖了各种类型，包括惊险刺激、悬疑推理、历史传记、科幻奇幻、言情小说等等，无论您喜欢哪种类型，我们都能满足您的需求。</p>
+				</div>
+			</div>
+
+			<div id="right">
+				<div id='img'>
+
+				</div>
+				<img src="../img/applogo.png" id='right-one'>
+
+				<p id="register-first">注册</p>
+				<div id="login-form-text">
+					<form action="http://127.0.0.1:8000/Manage/register" method="post">
+						<input type="text" name="user" onFocus="if(value==defaultValue){value='';}"
+							onBlur="if(!value){value=defaultValue;}" value="请输入用户名或邮箱账号" id="login-form-itemfirst" />
+						<input type="text" name="pwd" onFocus="if(value==defaultValue){value='';}"
+							onBlur="if(!value){value=defaultValue;}" value="请输入密码" id="login-form-item" />
+						<button class="register-btn">注册</button>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script>
+	var f1 = document.getElementById('login-form-item')
+	f1.addEventListener('click', function () {
+		f1.type = 'password'
+	})
+</script>
+
+</html>

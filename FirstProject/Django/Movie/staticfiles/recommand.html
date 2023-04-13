@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>电影推荐系统</title>
+  <link rel="stylesheet" type="text/css" href="{% static " ./recommand.css" %}" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div id="header">
+    <h1>电影推荐系统</h1>
+    <div>
+      <input type="text" id="search-input" placeholder="搜索电影...">
+      <button>全部</button>
+      <button>动作</button>
+      <button>喜剧</button>
+      <button>爱情</button>
+    </div>
+  </div>
+  <div id="content">
+    <div id="left">
+      <table>
+        <tr>
+          <th>电影名</th>
+          <th>电影简介</th>
+          <th>电影评分</th>
+          <th>电影上映时间</th>
+        </tr>
+        <tr>
+          <td>流浪地球</td>
+          <td>故事发生在未来，太阳即将灭亡，人类面临
+          </td>
+          <td>8.0</td>
+          <td>2019-02-05</td>
+        </tr>
+        <tr>
+          <td>疯狂的外星人</td>
+          <td>一名外星人来到地球寻找真爱，并与一位朴实的村民组成了一对奇特的CP，在过程中发生了一系列搞笑的事情。</td>
+          <td>7.6</td>
+          <td>2019-02-05</td>
+        </tr>
+        <tr>
+          <td>唐人街探案3</td>
+          <td>唐仁的侄子小唐从美国回国，与N号房的主人小谋联手展开了一场新的探案之旅。</td>
+          <td>7.9</td>
+          <td>2021-02-12</td>
+        </tr>
+        <tr>
+          <td>大赢家</td>
+          <td>讲述了一个90后青年周星驰遇到一个90后女孩，两人组成“马来西亚”队伍参加假球比赛，最终打败黑帮老大的故事。</td>
+          <td>7.4</td>
+          <td>2021-02-12</td>
+        </tr>
+      </table>
+    </div>
+    <div id="right">
+      <h2>推荐电影</h2>
+      <ul id="recommendations">
+        <li>黑袍纠察队</li>
+        <li>拆局专家</li>
+        <li>寻龙传说</li>
+        <li>快乐大本营</li>
+        <li>我和我的家乡</li>
+        <li>唐人街探案2</li>
+        <li>功夫瑜伽</li>
+        <li>西游记之大圣归来</li>
+        <li>芳华</li>
+        <li>三生三世十里桃花</li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  $(document).ready(function () {
+    // 点击按钮筛选电影类型
+    $('button').click(function () {
+      var type = $(this).text();
+      $('table tr').show();
+      $('table tr:gt(0)').not(':contains(' + type + ')').hide();
+    });
+
+    // 搜索电影
+    $('#search-input').keyup(function () {
+      searchMovies();
+    });
+
+    function searchMovies() {
+      var query = $('#search-input').val().toLowerCase();
+      $('table tr').show();
+      $('table tr:gt(0)').filter(function () {
+        return $(this).text().toLowerCase().indexOf(query) == -1;
+      }).hide();
+    }
+  });
+</script>

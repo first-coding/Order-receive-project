@@ -1,0 +1,90 @@
+/* 上半部分布局 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+#header {
+  height: 30%;
+  width: 100%;
+  background-color: rgb(87, 83, 83);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 下半部分布局 */
+#content {
+  height: 70%;
+  width: 100%;
+  display: flex;
+}
+
+
+a:link {
+  text-decoration: none;
+}
+
+a {
+  color: black;
+}
+
+
+a:hover {
+  color: #e0d1d1;
+  text-decoration: none;
+}
+
+#left {
+  flex: 7;
+  padding: 18px;
+}
+
+#right {
+  flex: 3;
+  padding: 10px;
+}
+
+/* 表格样式 */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 推荐电影列表样式 */
+#recommendations {
+  list-style-type: none;
+  padding: 0;
+}
+
+#recommendations li {
+  margin-bottom: 5px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#recommendations li:hover {
+  background-color: #f1f1f1;
+}
+
+.exit{
+  position:relative;
+  margin-right: 1430px;
+  background-color:rgb(87, 83, 83);
+  border:2px solid rgb(87, 83, 83);
+  color:white;
+  cursor:pointer;
+}
