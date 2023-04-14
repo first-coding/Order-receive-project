@@ -15,7 +15,7 @@ def get_cookie(request):
 # Create your views here.
 def ShowData(request):
     try:
-        db = pymysql.connect(host="localhost",user='root',passwd="*****",port=3306,db='movie')
+        db = pymysql.connect(host="localhost",user='root',passwd="****",port=3306,db='movie')
         print("ShowData mysql连接成功")
     except:
         print("ShowData mysql连接失败")
@@ -36,7 +36,7 @@ def Suggest(request):
         id=-1
     if (suggest.objects.filter(flag=id).count())==0:
         try:
-            db = pymysql.connect(host="localhost",user='root',passwd="******",port=3306,db='movie')
+            db = pymysql.connect(host="localhost",user='root',passwd="*****",port=3306,db='movie')
             print("Suggest mysql连接成功")
         except:
             print("Suggest mysql连接失败")
@@ -56,7 +56,7 @@ def Insert(request):
     movie_name = request.GET.get('movie_name','')
     user_name = request.GET.get('user_name','')
     try:
-        db = pymysql.connect(host="localhost",user='root',passwd="******",port=3306,db='movie')
+        db = pymysql.connect(host="localhost",user='root',passwd="*****",port=3306,db='movie')
         print("mysql连接成功")
     except:
         print("mysql连接失败")
@@ -85,7 +85,7 @@ def search(request):
     movie_name = request.GET.get('movie_name','')
     print(movie_name)
     try:
-        db = pymysql.connect(host="localhost",user='root',passwd="*****",port=3306,db='movie')
+        db = pymysql.connect(host="localhost",user='root',passwd="******",port=3306,db='movie')
         print("mysql连接成功")
     except:
         print("mysql连接失败")
@@ -98,7 +98,7 @@ def select(request):
     type = request.GET.get('type','')
     print(type)      
     try:
-        db = pymysql.connect(host="localhost",user='root',passwd="*****",port=3306,db='movie')
+        db = pymysql.connect(host="localhost",user='root',passwd="*******",port=3306,db='movie')
         print("mysql连接成功")
     except:
         print("mysql连接失败")

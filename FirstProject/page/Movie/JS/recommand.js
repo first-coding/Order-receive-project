@@ -8,6 +8,7 @@ let tables = document.getElementById('tables')
 let left = document.getElementById('left')
 let buttons = document.getElementsByTagName('button')
 let tbody = document.getElementById('tbody')
+let search_button = document.getElementById('search')
 async function requestData(urls) {
     let data;
     await axios.post(urls)
@@ -152,6 +153,10 @@ search.onkeydown = function (event) {
     }
 }
 
+search_button.onclick = function(){
+    Insert()
+}
+
 function typedata(data) {
     tbody.innerHTML = ""
     if (data.length % 3 == 0) {
@@ -207,7 +212,7 @@ function buttonclick(data) {
 
 
 window.onload = function () {
-    for (let i = 0; i <buttons.length; i++)
+    for (let i = 0; i <=3; i++)
         buttons[i].onclick = function () {
             buttonclick(buttons[i].innerHTML)
         }

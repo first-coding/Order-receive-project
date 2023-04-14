@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	{% load static %}
+	<title>小说与电影推荐系统</title>
+	<link rel="stylesheet" type="text/css" href="{% static "./recommand.css" %}" />
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+
+	<div class="header">
+		<button class="exit" id="exit">退出登录</button>
+		<h1>小说推荐系统</h1>
+		<div class="search-box">
+			<form method="POST" id="search-form" onsubmit="showPopup(event)">
+				<input type="text" placeholder="请输入小说名称..." name="keyword" required>
+				<button id='search'>搜索</button>
+			</form>
+		</div>
+
+		<div id="popup-wrapper">
+			<div id="popup-container">
+				<p id="welcome">欢迎使用</p>
+				<h2 id="title"></h2>
+				<a id='url' href=''>
+					<img id="cover" src="" alt="">
+				</a>
+				<p id="summary"></p>
+				<p id="updated"></p>
+				<button id='close-button' onclick="hidePopup()">关闭弹窗</button>
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="left-content">
+				<table>
+					<thead>
+						<tr>
+							<th>封面</th>
+							<th>小说名称</th>
+							<th>字数</th>
+							<th>推荐</th>
+							<th>简介</th>
+						</tr>
+					</thead>
+					<tbody id="tbody">
+					</tbody>
+				</table>
+			</div>
+			<div class="right-content">
+				<h2>今日小说推荐</h2>
+				<ul class="movie-list" id="right">
+				</ul>
+			</div>
+		</div>
+</body>
+
+</html>
+<script src="{% static "./axios.js" %}"></script>
+<script src="{% static "./recommand.js" %}"></script>

@@ -6,14 +6,21 @@ body {
   font-size: 14px;
 }
 #header {
-  height: 30%;
+  height:200px;
   width: 100%;
-  background-color: rgb(87, 83, 83);
+  background-image:url("http://127.0.0.1:8000/Movie/recommand_top.jpg");
+  background-repeat:no-repeat;
+  background-size:100%;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#header input{
+  width:320px;
+  height:25px;
 }
 
 /* 下半部分布局 */
@@ -80,11 +87,28 @@ td {
   background-color: #f1f1f1;
 }
 
+.searchs button{
+  width:50px;
+  height: 30px;
+}
+
 .exit{
-  position:relative;
-  margin-right: 1430px;
-  background-color:rgb(87, 83, 83);
-  border:2px solid rgb(87, 83, 83);
+  position:flex;
+  margin-right: -1430px;
+  margin-top: -60px;
+  background-color:rgb(9, 7, 5);
+  border:2px solid rgb(9, 7, 5);
   color:white;
   cursor:pointer;
+}
+
+.Type{
+  position:absolute;
+  margin-right: 1320px;
+  margin-bottom: 150px;
+}
+
+.Type button{
+  background-color: rgb(61, 57, 57);
+  color:white; 
 }

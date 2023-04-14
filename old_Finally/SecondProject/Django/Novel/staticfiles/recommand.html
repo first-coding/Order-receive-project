@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>小说与电影推荐系统</title>
+    <link type="text/css" rel="stylesheet" href="../CSS/recommand.css" />
+	<script src="../JS/recommand.js"></script>
+</head>
+<body>
+	<div class="header">
+		<h1>小说推荐系统</h1>
+		<div class="search-box">
+		<form onsubmit="showPopup(event)">
+		<input type="text" placeholder="请输入小说名称..." name="keyword" required>
+		<input type="submit" value="搜索">
+		</form>
+	</div>
+	
+		<div id="popup-wrapper">
+			<div id="popup">
+				<h2 id="title"></h2>
+				<img id="cover" src="" alt="">
+				<p id="summary"></p>
+				<p id="updated"></p>
+				<button onclick="hidePopup()">关闭</button>
+			</div>
+		</div>
+	
+	<div class="content">
+		<div class="left-content">
+			<table>
+				<thead>
+					<tr>
+						<th>封面</th>
+						<th>小说名称</th>
+						<th>标签</th>
+						<th>简介</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+                            <a href='https://book.qidian.com/info/1031940621/'>
+                            <img src="https://bookcover.yuewen.com/qdbimg/349573/1031940621/180.webp" alt="小说1">
+                            </a>
+                        </td>
+						<td>灵境行者</td>
+						<td>
+                            <p>275.24万字</p>
+                            <p>411.04万总推荐</p>
+                            <p>5.16万周推荐</p>
+                         </td>
+						<td>亘古通今，传闻世有灵境。,关于灵境的说法，历朝历代的名人雅士众说纷纭，诗中记载：,“自齐至唐，兹山濅荒，灵境寂寥，罕有人游。”,“灵境不可状，鬼工谅难求。”</td>
+					</tr>
+					<tr>
+						<td>
+                            <a href='https://book.qidian.com/info/1027339371/'>
+                            <img src="https://bookcover.yuewen.com/qdbimg/349573/1027339371/180.webp" alt="小说2">
+                            </a>
+                        </td>
+						<td>深空彼岸</td>
+						<td>
+                            <p>495.37万字</p>
+                            <p>848.28万总推荐</p>
+                            <p>5.51万周推荐</p>
+                        </td>
+						<td>浩瀚的宇宙中，一片星系的生灭，也不过是刹那的斑驳流光。,仰望星空，总有种结局已注定的伤感，千百年后你我在哪里？家国，文明火光，地球，都不过是深空中的一粒尘埃。,星空一瞬，人间千年。,虫鸣一世不过秋，你我一样在争渡。,深空尽头到底有什么？,——————,书友群见书友圈置顶帖。</td>
+					</tr>
+					<tr>
+						<td>
+                            <a href= 'https://book.qidian.com/info/1031777108/'>
+                            <img src="https://bookcover.yuewen.com/qdbimg/349573/1031777108/180.webp" alt="小说3"></td>
+                            </a>
+						<td>光阴之外</td>
+						<td>
+                            <p>219.71万字</p>
+                            <p>233.7万总推荐</p>
+                            <p>2.94万周推荐</p>
+                        </td>
+						<td>天地是万物众生的客舍，光阴是古往今来的过客。,死生的差异，就好像梦与醒的不同，纷纭变换，不可究诘。,那么超越了生死，超脱了天地，在光阴之外，等待我们的是什么？,这是耳根继《仙逆》《求魔》《我欲封天》《一念永恒》《三寸人间》后，创作的第六部长篇小说《光阴之外》</td>
+					</tr>
+                    <tr>
+						<td>
+                            <a href= 'https://book.qidian.com/info/1031794030/'>
+                            <img src="https://bookcover.yuewen.com/qdbimg/349573/1031794030/180.webp" alt="小说3"></td>
+                            </a>
+						<td>道诡异仙</td>
+						<td>
+                            <p>206.93万字</p>
+                            <p>98.06万总推荐</p>
+                            <p>1.41万周推荐</p>
+                        </td>
+						<td>诡异的天道，异常的仙佛，是真？是假？ 陷入迷惘的李火旺无法分辨。,可让他无法分辨的不仅仅只是这些。还有他自己，他病了，病的很重。</td>
+					</tr>
+					<tr>
+						<td>
+                            <a href= 'https://book.qidian.com/info/1009817672/'>
+                            <img src="https://bookcover.yuewen.com/qdbimg/349573/1009817672/180.webp" alt="小说3"></td>
+                            </a>
+						<td>轮回乐园</td>
+						<td>
+                            <p>1286.14万字</p>
+                            <p>1082.68万总推荐</p>
+                            <p>2.37万周推荐</p>
+                        </td>
+						<td>苏晓签订轮回契约，进入各个世界执行任务。,他曾目睹一个世界崩灭为尘粒，也曾与被遗忘的王者持刃而战。,暗鸦在低语，黑渊下巨兽咆哮。,欢迎来到，轮回乐园……</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="right-content">
+			<h2>今日小说推荐</h2>
+			<ul class="movie-list">
+				<li>唐人的餐桌</li>
+				<li>请公子斩妖</li>
+				<li>深海余烬</li>
+				<li>灵境行者</li>
+				<li>择日飞升</li>
+				<li>这游戏也太真实了</li>
+				<li>乱世书</li>
+				<li>请公子斩妖</li>
+				<li>渊天尊</li>
+				<li>我家娘子，不对劲</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

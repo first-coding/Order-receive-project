@@ -16,7 +16,7 @@ def get_cookie(request):
 # Create your views here.
 def ShowData(request):
     try:
-        db = pymysql.connect(host="localhost",user='root',passwd="****",port=3306,db='novel')
+        db = pymysql.connect(host="localhost",user='root',passwd="20011008",port=3306,db='novel')
         print("ShowData mysql连接成功")
     except:
         print("ShowData mysql连接失败")
@@ -37,7 +37,7 @@ def Suggest(request):
         id=-1
     if (suggest.objects.filter(flag=id).count())==0:
         try:
-            db = pymysql.connect(host="localhost",user='root',passwd="*****",port=3306,db='novel')
+            db = pymysql.connect(host="localhost",user='root',passwd="20011008",port=3306,db='novel')
             print("Suggest mysql连接成功")
         except:
             print("Suggest mysql连接失败")
@@ -57,7 +57,7 @@ def Insert(request):
     novel_name = request.GET.get('novel_name','')
     user_name = request.GET.get('user_name','')
     try:
-        db = pymysql.connect(host="localhost",user='root',passwd="****",port=3306,db='novel')
+        db = pymysql.connect(host="localhost",user='root',passwd="20011008",port=3306,db='novel')
         print("mysql连接成功")
     except:
         print("mysql连接失败")
@@ -84,7 +84,7 @@ def search(request):
     novel_name = request.GET.get('novel_name','')
     print(novel_name)
     try:
-        db = pymysql.connect(host="localhost",user='root',passwd="****",port=3306,db='novel')
+        db = pymysql.connect(host="localhost",user='root',passwd="20011008",port=3306,db='novel')
         print("mysql连接成功")
     except:
         print("mysql连接失败")
